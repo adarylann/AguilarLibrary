@@ -1,0 +1,73 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Welcome to the Daryl's Library!");
+
+Console.WriteLine("LIST OF BOOKS:");
+Console.WriteLine("1. Beauty Queens – Libba Bray");
+Console.WriteLine("2. Before I Let Go – Marieke Nijkamp");
+Console.WriteLine("3. The Belles (#1) – Dhonielle Clayton");
+Console.WriteLine("4. Big Bones – Laura Dockrill");
+Console.WriteLine("5. Caraval – Stephanie Garber");
+Console.WriteLine("6. Coraline – Neil Gaiman");
+Console.WriteLine("7. Dangerous Lies – Becca Fitzpatrick");
+Console.WriteLine("8. Descendants – Rae Else");
+Console.WriteLine("9. Fangirl – Rainbow Rowell");
+Console.WriteLine("10. Final Girls – Riley Sager");
+Console.WriteLine("11. Girlhood – Cat Clarke");
+Console.WriteLine("12. Hades – Alexandra Adornetto");
+Console.WriteLine("13. Heaven – Alexandra Adornetto");
+Console.WriteLine("14. Home Fire – Kamila Shamsie");
+Console.WriteLine("15. Internment – Samira Ahmed");
+Console.WriteLine("16. Kindred Spirits – Rainbow Rowell");
+Console.WriteLine("17. Milk and Honey – Rupi Kaur");
+Console.WriteLine("18. Oleanna – David Mamet");
+Console.WriteLine("19. Paintbrush – Hannah Bucchin");
+Console.WriteLine("20. Zenn Diagram – Wendy Brant");
+Console.WriteLine("");
+
+        Console.Write("Enter the number of books you need: ");
+        int NumberOfBooks;
+        if (!int.TryParse(Console.ReadLine(), out NumberOfBooks))
+        {
+            Console.WriteLine("Invalid input. Please enter a valid input.");
+            return;
+        }
+
+        Console.WriteLine();
+
+        for (int D = 1; D <= NumberOfBooks; D++)
+        {
+            Console.WriteLine($"Book #{D}");
+            Console.Write("Enter the title of the book: ");
+            string Title = Console.ReadLine();
+
+            Console.Write("Enter the number of days you need the book: ");
+            int NumberOfDays;
+            if (!int.TryParse(Console.ReadLine(), out NumberOfDays))
+            {
+                Console.WriteLine("Invalid input.");
+                return;
+            }
+
+            Console.Write("Enter the current date (format: dd/MM/yyyy): ");
+            DateTime CurrentDate;
+            if (!DateTime.TryParse(Console.ReadLine(), out CurrentDate))
+            {
+                Console.WriteLine("Invalid input. Please in the format dd/MM/yyyy.");
+                return;
+            }
+
+            DateTime ExpectedReturnDate = CurrentDate.AddDays(NumberOfDays);
+
+            Console.WriteLine($"Expected return date for {Title}: {ExpectedReturnDate.ToString("dd/MM/yyyy")}");
+            Console.WriteLine();
+        }
+
+        Console.WriteLine("Thank you for using the Daryl's Library!");
+        Console.ReadKey();
+    }
+}
