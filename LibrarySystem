@@ -57,7 +57,7 @@ Console.WriteLine("");
             DateTime CurrentDate;
             if (!DateTime.TryParse(Console.ReadLine(), out CurrentDate))
             {
-                Console.WriteLine("Invalid input. Please in the format dd/MM/yyyy.");
+                Console.WriteLine("Invalid input. Please enter in the format: dd/MM/yyyy.");
                 return;
             }
 
